@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+        <script>
+
+            // Checks if the input is completed
+            function checkField(id) {
+
+                if (document.getElementById(id.toLowerCase()).value === "") {
+
+                    // Displays a message if the input is not filled
+                    document.getElementById("feedback").innerHTML = 'Please fill out the \"' + id + '\" field';
+
+                    return false;
+                }
+
+                return true;
+            }
+
+            // Сhecks what the user inputs
+            function inputContant(name, value_input) {
+
+                // The number of months in a year and the maximum number of days in a month
+                let max_number;
+                if (name === "month") {
+                    max_number = 12;
+                }
+                else if (name === "day") {
+                    max_number = 31;
+                }
+
+                // Unless the user has entered a positive integer in the specified range
+                if (Number.isInteger(Number(value_input)) === false || value_input < 1 || value_input > max_number) {
+
+                    // displays feedback
+                    document.getElementById("feedback").innerHTML = 'Please input the number between 1 and ' + max_number + ' in the \"' + name + '\" field';
+
+                    // Don't submit the form
+                    return false;
+                }
+            }
+
+            // The event fires when the initial HTML document has been completely loaded and parsed
+            document.addEventListener("DOMContentLoaded", function() {
+
+                // When the form is submitted, the "submit" event is fired
+                document.querySelector("form.add").onsubmit = function() {
+
+                    // Value entered in the "month" input
+                    let value_month = document.getElementById("month").value;
+
+                    // Value entered in the "day" input
+                    let value_day = document.getElementById("day").value;
+
+                    // Imputs ("name", "month" or "day") of the form aren't filled
+                    if (checkField("Name") === false || checkField("Month") === false || checkField("Day") === false) {
+
+                        // Don't submit the form
+                        return false;
+
+                    }
+                    // Checks what the user enters in the "month" and "day" fields
+                    if (inputContant("month", value_month) === false || inputContant("day", value_day) === false) {
+
+                        // Don't submit the form
+                        return false;
+                    }
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+
+                <!-- Displays text if form fields are filled incorrectly -->
+                <div id="feedback"></div>
+                <!--Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="post" class="add">
+                    <input name="name" id="name" autocomplete="off" placeholder="Name" type="text">
+                    <input name="month" id="month" autocomplete="off" placeholder="Month" type="text">
+                    <input name="day" id="day" autocomplete="off" placeholder="Day" type="text">
+                    <input type="submit" value="Add Birthday">
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loop through the database entries to display them in this table -->
+                        {% for row in rows:%}
+                            <tr>
+                                <td>{{row.name}}</td>
+                                <td>{{row.month}}/{{row.day}}</td>
+                                <td>
+                                    <form action="/delete/{{row.id}}" method="post">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

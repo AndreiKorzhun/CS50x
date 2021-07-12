@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Changes the color and adds text when an answer is correct
+            function correctAnswer (answer, confirmation) {
+                // Changes color of the element
+                answer.style.backgroundColor = "lime";
+                // Adds text
+                confirmation.innerHTML = "Correct!";
+                // Changes color of text
+                confirmation.style.color = "lime";
+            }
+
+            // Changes the color and adds text when an answer is incorrect
+            function incorrectAnswer (answer, confirmation) {
+                // Change color of the element
+                answer.style.backgroundColor = "red";
+                // Adds text
+                confirmation.innerHTML = "Incorrect!";
+                // Changes color of text
+                confirmation.style.color = "red";
+            }
+
+            /*      Question 1      */
+            // Finds all the buttons
+            let buttons = document.getElementsByClassName("question1");
+
+            // Goes through all the buttons and replaces the color with the "standard" one
+            function cleanState()
+            {
+                for(let j = 0; j < buttons.length; j++)
+                {
+                    buttons[j].style.backgroundColor = "#d9edff";
+                }
+            }
+
+            // After the page loads, runs the function
+            document.addEventListener("DOMContentLoaded", function() {
+                for(let i = 0; i < buttons.length; i++)
+                {
+                    // Attach an event for each individual button
+                    // Pressing the button will call the function
+                    buttons[i].addEventListener("click", function() {
+                        // Changes the color of the buttons to "standard"
+                        cleanState();
+                        // Finds the element in which the text will be added
+                        let confirmation = document.getElementById("confirmation1");
+                        // The user answered correctly
+                        if (buttons[i].innerHTML == 8) {
+                            correctAnswer(buttons[i], confirmation);
+                        }
+                        // The user answered incorrectly
+                        else {
+                            incorrectAnswer(buttons[i], confirmation);
+                        }
+                    });
+                }
+            });
+
+            /*      Question2       */
+            // After the page loads, runs the function
+            document.addEventListener("DOMContentLoaded", function() {
+                // Pressing the button will call the function
+                document.querySelector(".question2").addEventListener("click", function() {
+                    // Element in which the user enters text
+                    let answer = document.getElementById("answer");
+                    // Finds the element in which the text will be added
+                    let confirmation = document.getElementById("confirmation2");
+                    // The user answered correctly
+                    if (answer.value.toLowerCase() == "london") {
+                        correctAnswer(answer, confirmation);
+                    }
+                    // The user answered incorrectly
+                    else {
+                        incorrectAnswer(answer, confirmation);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>How many planets are there in the solar system?</h3>
+
+                <button class="question1">0</button>
+                <button class="question1">1</button>
+                <button class="question1">8</button>
+                <button class="question1">9</button>
+                <button class="question1">10</button>
+
+                <p id="confirmation1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>What is the capital of Great Britain?</h3>
+
+                <input type="text" id="answer" autocomplete="off">
+                <button class="question2">Check</button>
+
+                <p id="confirmation2"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
