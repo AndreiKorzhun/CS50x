@@ -55,9 +55,3 @@ Height: 4
 ####  ####
 ```
 Notice that width of the “gap” between adjacent pyramids is equal to the width of two hashes, irrespective of the pyramids’ heights.
-
-Create a new directory (i.e., folder) called `mario` inside of your `pset1` directory, by executing
-```
-~/ $ mkdir ~/pset1/mario
-```
-Create a new file called `mario.c` inside your `mario` directory. Modify `mario.c` in such a way that it implements this program as described!
