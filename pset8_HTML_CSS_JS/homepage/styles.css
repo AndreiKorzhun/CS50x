@@ -1,0 +1,92 @@
+body {
+    margin-left: 15px;    /* Величина отступа от левого края элемента */
+    margin-right: 15px;    /* Величина отступа от правого края элемента */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+p {margin-left: 15px;}    /* Величина отступа от левого края элемента */
+
+.content {
+    flex: 1;    /* Перемещает fotter в конец страницы*/
+    width: 100%
+}
+
+.top-menu {
+    background: rgba(255,255,255,.5); /* Цвет меню навигации*/
+    box-shadow: 3px 5px 7px rgba(0,0,0,.3); /* Тень меню навигации(размер, цвет) */
+    padding: 20px; /* Отступ от края */
+    background-color: black;
+}
+
+.top-menu:after {
+    content: "";
+    display: table; /* Элемент является блочной таблицей */
+    clear: both; /* Запрещено обтекание меню другими элементами*/
+}
+
+.navbar-logo {display: inline-block;} /* Обтекается другими элементами веб-страницы подобно встроенному элементу */
+
+.menu-main {
+    list-style: none; /* Убрать маркер списка */
+    padding: 10px;
+}
+
+.menu-main li {display: inline-block;}
+
+.menu-main a {
+    text-decoration: none; /* Отменяет все эффекты, в том числе и подчеркивания у ссылок */
+    display: block;
+    position: relative; /* Положение элемента устанавливается относительно его исходного места */
+    padding-left: 30px; /* Смещение каждого слова меню */
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Все символы текста становятся прописными (верхний регистр) */
+    font-weight: bold;
+    color: #FFFFFF;
+    transition:.2s linear;
+}
+
+.menu-main a:hover {font-size: 20px;} /* Размер текста ссылки при наведении курсора*/
+
+.text-right {text-align: right;} /* Выравнивание текста по левому краю */
+
+.col-ab {
+    width: 20%;
+    float: left; /* Выравнивает элемент по левому краю, а все остальные элементы, вроде текста, обтекают его по правой стороне */
+    position: relative; /* Положение элемента устанавливается относительно его исходного места */
+}
+
+.col-ab1 {
+    float: left; /* Выравнивает элемент по левому краю, а все остальные элементы, вроде текста, обтекают его по правой стороне */
+    width: 65%;
+}
+
+.text-center {text-align: center;} /* Выравнивание текста по центру */
+
+.indent {padding-top: 10px;} /* Устанавливает значение поля от верхнего края содержимого элемента */
+
+li {
+    list-style-type: none; /* Скрыть отображение маркеров в списке */
+    font-size: 18px; /* Размер шрифта */
+    margin-top: 5px; /* Величина отступа от верхнего края элемента */
+}
+
+a {
+    color: black; /* Цвет текста ссылок */
+    font-weight: 600; /* Устанавливает насыщенность шрифта */
+    font-style: italic; /* Курсивное начертание */
+}
+
+.wrap ul {column-count: 2;} /* Определяет количество колонок в многоколоночном тексте */
+
+iframe {border: 0;} /* Граница фрейма */
+
+.size {width: 100%;} /* Размер */
+
+#example
+{
+    width: 60%;
+    margin: auto;
+}
