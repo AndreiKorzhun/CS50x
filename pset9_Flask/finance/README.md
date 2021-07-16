@@ -6,7 +6,7 @@ Implement a website via which users can “buy” and “sell” stocks, a la th
 
 
 ## Background
--------------
+
 If you’re not quite sure what it means to buy and sell stocks (i.e., shares of a company), head [here](https://www.investopedia.com/articles/basics/06/invest1000.asp) for a tutorial.
 
 You’re about to implement C$50 Finance, a web app via which you can manage portfolios of stocks. Not only will this tool allow you to check real stocks’ actual prices and portfolios’ values, it will also let you buy (okay, “buy”) and sell (okay, “sell”) stocks by querying [IEX](https://iextrading.com/developer/) for stocks’ prices.
@@ -65,8 +65,9 @@ Let’s turn our attention now to this problem’s distribution code!
 
 
 ## Distribution
----------------
-## Downloading
+
+### Downloading
+
 ```
 $ wget http://cdn.cs50.net/2020/fall/psets/9/finance/finance.zip
 $ unzip finance.zip
@@ -77,7 +78,7 @@ application.py  helpers.py        static/
 finance.db      requirements.txt  templates/
 ```
 
-## Configuring
+### Configuring
 
 Before getting started on this assignment, we’ll need to register for an API key in order to be able to query IEX’s data. To do so, follow these steps:
 
@@ -94,9 +95,9 @@ $ export API_KEY=value
 where `value` is that (pasted) value, without any space immediately before or after the `=`. You also may wish to paste that value in a text document somewhere, in case you need it again later.
 
 
-## Running
+### Running
 
-. Start Flask’s built-in web server (within `finance/`):
+Start Flask’s built-in web server (within `finance/`):
 ```
 $ flask run
 ```
@@ -107,9 +108,10 @@ Via CS50’s file browser, double-click `finance.db` in order to open it with ph
 Here on out, if you’d prefer a command line, you’re welcome to use `sqlite3` instead of phpLiteAdmin.
 
 
-## Understanding
+### Understanding
 
 **`application.py`**
+
 Open up `application.py`. Atop the file are a bunch of imports, among them CS50’s SQL module and a few helper functions. More on those soon.
 
 After configuring Flask, notice how this file disables caching of responses (provided you’re in debugging mode, which you are by default on CS50 IDE), lest you make a change to some file but your browser not notice. Notice next how it configures Jinja with a custom “filter,” `usd`, a function (defined in `helpers.py`) that will make it easier to format values as US dollars (USD). It then further configures Flask to store sessions on the local filesystem (i.e., disk) as opposed to storing them inside of (digitally signed) cookies, which is Flask’s default. The file then configures CS50’s SQL module to use `finance.db`, a SQLite database whose contents we’ll soon see!
@@ -122,6 +124,7 @@ Notice too how most routes support GET and POST. Even so, most of them (for now!
 
 
 **`helpers.py`**
+
 Next take a look at `helpers.py`. Ah, there’s the implementation of `apology`. Notice how it ultimately renders a template, `apology.html`. It also happens to define within itself another function, `escape`, that it simply uses to replace special characters in apologies. By defining `escape` inside of `apology`, we’ve scoped the former to the latter alone; no other functions will be able (or need) to call it.
 
 Next in the file is `login_required`. No worries if this one’s a bit cryptic, but if you’ve ever wondered how a function can return another function, here’s an example!
@@ -132,23 +135,26 @@ Last in the file is `usd`, a short function that simply formats a `float` as USD
 
 
 **`requirements.txt`**
+
 Next take a quick look at `requirements.txt`. That file simply prescribes the packages on which this app will depend.
 
 
 **`static/`**
+
 Glance too at `static/`, inside of which is `styles.css`. That’s where some initial CSS lives. You’re welcome to alter it as you see fit.
 
 
 **`templates/`**
+
 Now look in `templates/`. In `login.html` is, essentially, just an HTML form, stylized with Bootstrap In `apology.html`, meanwhile, is a template for an apology. Recall that `apology` in `helpers.py` took two arguments: `message`, which was passed to `render_template` as the value of `bottom`, and, optionally, `code`, which was passed to `render_template` as the value of `top`. Notice in `apology.html` how those values are ultimately used! And [here’s](https://github.com/jacebrowning/memegen) why 0:-)
 
 Last up is `layout.html`. It’s a bit bigger than usual, but that’s mostly because it comes with a fancy, mobile-friendly “navbar” (navigation bar), also based on Bootstrap. Notice how it defines a block, `main`, inside of which templates (including `apology.html` and `login.html`) shall go. It also includes support for Flask’s message flashing so that you can relay messages from one route to another for the user to see.
 
 
 ## Specification
-----------------
 
 **`register`**
+
 Complete the implementation of `register` in such a way that it allows a user to register for an account via a form.
 
 - Require that a user input a username, implemented as a text field whose `name` is `username`. Render an apology if the user’s input is blank or the username already exists.
@@ -161,6 +167,7 @@ Once you’ve implemented `register` correctly, you should be able to register f
 
 
 **`quote`**
+
 Complete the implementation of `quote` in such a way that it allows a user to look up a stock’s current price.
 
 - Require that a user input a stock’s symbol, implemented as a text field whose `name` is `symbol`.
@@ -169,6 +176,7 @@ Complete the implementation of `quote` in such a way that it allows a user to lo
 
 
 **`buy`**
+
 Complete the implementation of `buy` in such a way that it enables a user to buy stocks.
 
 - Require that a user input a stock’s symbol, implemented as a text field whose `name` is `symbol`. Render an apology if the input is blank or the symbol does not exist (as per the return value of `lookup`).
@@ -188,6 +196,7 @@ Once you’ve implemented buy correctly, you should be able to see users’ purc
 
 
 **`index`**
+
 Complete the implementation of `index` in such a way that it displays an HTML table summarizing, for the user currently logged in, which stocks the user owns, the numbers of shares owned, the current price of each stock, and the total value of each holding (i.e., shares times price). Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
 
 - Odds are you’ll want to execute multiple `SELECT`s. Depending on how you implement your table(s), you might find GROUP BY, HAVING, SUM and/or WHERE of interest.
@@ -195,6 +204,7 @@ Complete the implementation of `index` in such a way that it displays an HTML ta
 
 
 **`sell`**
+
 Complete the implementation of `sell` in such a way that it enables a user to sell shares of a stock (that he or she owns).
 
 - Require that a user input a stock’s symbol, implemented as a `select` menu whose `name` is `symbol`. Render an apology if the user fails to select a stock or if (somehow, once submitted) the user does not own any shares of that stock.
@@ -205,66 +215,8 @@ Complete the implementation of `sell` in such a way that it enables a user to se
 
 
 **`history`**
+
 Complete the implementation of `history` in such a way that it displays an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
 
 - For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
 - You might need to alter the table you created for `buy` or supplement it with an additional table. Try to minimize redundancies.
-
-
-personal touch
-Implement at least one personal touch of your choice:
-
-Allow users to change their passwords.
-Allow users to add additional cash to their account.
-Allow users to buy more shares or sell shares of stocks they already own via index itself, without having to type stocks’ symbols manually.
-Require users’ passwords to have some number of letters, numbers, and/or symbols.
-Implement some other feature of comparable scope.
-Walkthrough
-
-Testing
-To test your code with check50, execute the below.
-
-$ check50 cs50/problems/2021/x/finance
-Be aware that check50 will test your entire program as a whole. If you run it before completing all required functions, it may report errors on functions that are actually correct but depend on other functions.
-
-Be sure to test your web app manually too, as by
-
-inputting alphabetical strings into forms when only numbers are expected,
-inputting zero or negative numbers into forms when only positive numbers are expected,
-inputting floating-point values into forms when only integers are expected,
-trying to spend more cash than a user has,
-trying to sell more shares than a user has,
-inputting an invalid stock symbol, and
-including potentially dangerous characters like ' and ; in SQL queries.
-Execute the below to evaluate the style of your Python files using style50.
-
-style50 *.py
-Staff’s Solution
-You’re welcome to stylize your own app differently, but here’s what the staff’s solution looks like!
-
-https://finance.cs50.net/
-
-Feel free to register for an account and play around. Do not use a password that you use on other sites.
-
-It is reasonable to look at the staff’s HTML and CSS.
-
-Hints
-To format a value as a US dollar value (with cents listed to two decimal places), you can use the usd filter in your Jinja templates (printing values as {{ value | usd }} instead of {{ value }}.
-Within cs50.SQL is an execute method whose first argument should be a str of SQL. If that str contains question mark parameters to which values should be bound, those values can be provided as additional named parameters to execute. See the implementation of login for one such example. The return value of execute is as follows:
-
-If str is a SELECT, then execute returns a list of zero or more dict objects, inside of which are keys and values representing a table’s fields and cells, respectively.
-If str is an INSERT, and the table into which data was inserted contains an autoincrementing PRIMARY KEY, then execute returns the value of the newly inserted row’s primary key.
-If str is a DELETE or an UPDATE, then execute returns the number of rows deleted or updated by str.
-Recall that cs50.SQL will log to your terminal window any queries that you execute via execute (so that you can confirm whether they’re as intended).
-Be sure to use question mark-bound parameters (i.e., a paramstyle of named) when calling CS50’s execute method, a la WHERE ?. Do not use f-strings, format or + (i.e., concatenation), lest you risk a SQL injection attack.
-If (and only if) already comfortable with SQL, you’re welcome to use SQLAlchemy Core or Flask-SQLAlchemy (i.e., SQLAlchemy ORM) instead of cs50.SQL.
-You’re welcome to add additional static files to static/.
-Odds are you’ll want to consult Jinja’s documentation when implementing your templates.
-It is reasonable to ask others to try out (and try to trigger errors in) your site.
-You’re welcome to alter the aesthetics of the sites, as via
-https://bootswatch.com/,
-https://getbootstrap.com/docs/4.1/content/,
-https://getbootstrap.com/docs/4.1/components/, and/or
-https://memegen.link/.
-You may find Flask’s documentation and Jinja’s documentation helpful!
-FAQs
