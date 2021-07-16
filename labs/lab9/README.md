@@ -2,9 +2,10 @@
 
 Create a web application to keep track of friends’ birthdays.
 
+![Birthdays](https://cs50.harvard.edu/x/2021/labs/9/birthdays.png)
 
 ## Understanding
-----------------
+
 In `application.py`, you’ll find the start of a Flask web application. 
 The application has one route (`/`) that accepts both `POST` requests (after the `if`) and `GET` requests (after the `else`). Currently, when the / route is requested via `GET`, the `index.html` template is rendered. When the `/` route is requested via `POST`, the user is redirected back to `/` via `GET`.
 
@@ -16,7 +17,7 @@ In the `templates` directory is an `index.html` file that will be rendered when 
 
 
 ## Implementation Details
--------------------------
+
 Complete the implementation of a web application to let users store and keep track of birthdays.
 
 - When the `/` route is requested via `GET`, your web application should display, in a table, all of the people in your database along with their birthdays.
