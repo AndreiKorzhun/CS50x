@@ -1,7 +1,7 @@
 # Cash
 
 ## Greedy Algorithms
---------------------
+
 When making change, odds are you want to minimize the number of coins you’re dispensing for each customer, lest you run out (or annoy the customer!). Fortunately, computer science has given cashiers everywhere ways to minimize numbers of coins due: greedy algorithms.
 
 According to the National Institute of Standards and Technology (NIST), a greedy algorithm is one “that always takes the best immediate, or local, solution while finding an answer. Greedy algorithms find the overall, or globally, optimal solution for some optimization problems, but may find less-than-optimal solutions for some instances of other problems.”
@@ -11,7 +11,7 @@ What’s all that mean? Well, suppose that a cashier owes a customer some change
 It turns out that this greedy approach (i.e., algorithm) is not only locally optimal but also globally so for America’s currency (and also the European Union’s). That is, so long as a cashier has enough of each coin, this largest-to-smallest approach will yield the fewest coins possible. How few? Well, you tell us!
 
 ## Implementation Details
--------------------------
+
 Implement, in a file called `cash.c` in a `~/pset1/cash` directory, a program that first asks the user how much change is owed and then prints the minimum number of coins with which that change can be made.
 
 - Use `get_float` to get the user’s input and `printf` to output your answer. Assume that the only coins available are quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢).
