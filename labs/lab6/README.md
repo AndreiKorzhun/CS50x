@@ -20,7 +20,7 @@ Mexico: 0.1% chance of winning
 ```
 
 ## Background
--------------
+
 In soccer’s World Cup, the knockout round consists of 16 teams. In each round, each team plays another team and the losing teams are eliminated. When only two teams remain, the winner of the final match is the champion.
 
 In soccer, teams are given FIFA Ratings, which are numerical values representing each team’s relative skill level. Higher FIFA ratings indicate better previous game results, and given two teams’ FIFA ratings, it’s possible to estimate the probability that either team wins a game based on their current ratings. The FIFA Ratings from just before the two previous World Cups are available as the May 2018 Men’s FIFA Ratings and March 2019 Women’s FIFA Ratings.
@@ -31,7 +31,7 @@ Your task in this lab is to do just that using Python!
 
 
 ## Understanding
-----------------
+
 Start by taking a look at the `2018m.csv` file. This file contains the 16 teams in the knockout round of the 2018 Men’s World Cup and the ratings for each team. Notice that the CSV file has two columns, one called `team` (representing the team’s country name) and one called `rating` (representing the team’s rating).
 
 The order in which the teams are listed determines which teams will play each other in each round (in the first round, for example, Uruguay will play Portugal and France will play Argentina; in the next round, the winner of the Uruguay-Portugal match will play the winner of the France-Argentina match). So be sure not to edit the order in which teams appear in this file!
@@ -53,7 +53,7 @@ Finally, at the end of `main`, we sort the teams in descending order of how many
 Populating `teams` and `counts` and writing the `simulate_tournament` function are left up to you!
 
 ## Implementation Details
--------------------------
+
 Complete the implementation of `tournament.py`, such that it simulates a number of tournaments and outputs each team’s probability of winning.
 
 First, in `main`, read the team data from the CSV file into your program’s memory, and add each team to the list `teams`.
