@@ -19,14 +19,14 @@ Ronald Bilius Weasley, born 1980
 ```
 
 ## Background
--------------
+
 Hogwarts is in need of a student database. For years, the professors have been maintaing a CSV file containing all of the students’ names and houses and years. But that file didn’t make it particularly easy to get access to certain data, such as a roster of all the Ravenclaw students, or an alphabetical listing of the students enrolled at the school.
 
 The challenge ahead of you is to import all of the school’s data into a SQLite database, and write a Python program to query that database to get house rosters for each of the houses of Hogwarts.
 
 
 ## Specification
-----------------
+
 In `import.py`, write a program that imports data from a CSV spreadsheet.
 
 - Your program should accept the name of a CSV file as a command-line argument.
@@ -46,7 +46,7 @@ In `roster.py`, write a program that prints a list of students for a given house
 
 
 ## Usage
---------
+
 Your program should behave per the example below:
 ```
 $ python import.py characters.csv
