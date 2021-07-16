@@ -4,7 +4,7 @@ Write SQL queries to answer questions about a database of songs.
 
 
 ## Understanding
-----------------
+
 Provided to you is a file called `songs.db`, a SQLite database that stores data from Spotify about songs and their artists. This dataset contains the top 100 streamed songs on Spotify in 2018. In a terminal window, run `sqlite3 songs.db` so that you can begin executing queries on the database.
 
 First, when `sqlite3` prompts you to provide a query, type `.schema` and press enter. This will output the `CREATE TABLE` statements that were used to generate each of the tables in the database. By examining those statements, you can identify the columns present in each table.
@@ -15,7 +15,7 @@ The challenge ahead of you is to write SQL queries to answer a variety of differ
 
 
 ## Implementation Details
--------------------------
+
 For each of the following problems, you should write a single SQL query that outputs the results specified by each problem. Your response must take the form of a single SQL query, though you may nest other queries inside of your query. You **should not** assume anything about the `id`s of any particular songs or artists: your queries should be accurate even if the id of any particular song or person were different. Finally, each query should return only the data necessary to answer the question: if the problem only asks you to output the names of songs, for example, then your query should not also output each song’s tempo.
 
 1. In `1.sql`, write a SQL query to list the names of all songs in the database.
