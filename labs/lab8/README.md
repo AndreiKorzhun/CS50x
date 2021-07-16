@@ -2,9 +2,10 @@
 
 Write a webpage that lets users answer trivia questions.
 
+![Trivia](https://cs50.harvard.edu/x/2021/labs/8/questions.png)
 
 ## Implementation Details
-------------------------
+
 Design a webpage using HTML, CSS, and JavaScript to let users answer trivia questions.
 
 - In `index.html`, add beneath “Part 1” a multiple-choice trivia question of your choosing with HTML.
