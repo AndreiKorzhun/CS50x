@@ -8,7 +8,7 @@ Grade 3
 ```
 
 ## Reading Levels
------------------
+
 According to Scholastic, E.B. White’s “Charlotte’s Web” is between a second and fourth grade reading level, and Lois Lowry’s “The Giver” is between an eighth grade reading level and a twelfth grade reading level. What does it mean, though, for a book to be at a “fourth grade reading level”?
 
 Well, in many cases, a human expert might read a book and make a decision on the grade for which they think the book is most appropriate. But you could also imagine an algorithm attempting to figure out what the reading level of a text is.
@@ -46,7 +46,7 @@ Grade 11
 
 
 ## Specification
-----------------
+
 Design and implement a program, `readability`, that computes the Coleman-Liau index of the text.
 
 - Implement your program in a file called `readability.c` in a directory called `readability`.
