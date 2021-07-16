@@ -6,7 +6,7 @@ $ ./filter -r image.bmp reflected.bmp
 ```
 
 ## Background
--------------
+
 ## Bitmaps
 
 Perhaps the simplest way to represent an image is with a grid of pixels (i.e., dots), each of which can be of a different color. For black-and-white images, we thus need 1 bit per pixel, as 0 could represent black and 1 could represent white, as in the below.
@@ -89,7 +89,7 @@ For a pixel along the edge or corner, like pixel 15, we would still look for all
 
 
 ## Understanding
-----------------
+
 Let’s now take a look at some of the files provided to you as distribution code to get an understanding for what’s inside of them.
 
 
@@ -147,7 +147,7 @@ which takes the image at `images/yard.bmp`, and generates a new image called `ou
 
 
 ## Specification
-----------------
+
 Implement the functions in `helpers.c` such that a user can apply grayscale, sepia, reflection, or blur filters to their images.
 
 - The function `grayscale` should take an image and turn it into a black-and-white version of the same image.
