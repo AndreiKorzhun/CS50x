@@ -28,7 +28,7 @@ Alice
 ```
 
 ## Background
--------------
+
 You already know about plurality elections, which follow a very simple algorithm for determining the winner of an election: every voter gets one vote, and the candidate with the most votes wins.
 
 But the plurality vote does have some disadvantages. What happens, for instance, in an election with three candidates, and the ballots below are cast?
@@ -69,7 +69,7 @@ Sounds a bit more complicated than a plurality vote, doesn’t it? But it arguab
 
 
 ## Understanding
-----------------
+
 Let’s open up `runoff.c` to take a look at what’s already there. We’re defining two constants: `MAX_CANDIDATES` for the maximum number of candidates in the election, and `MAX_VOTERS` for the maximum number of voters in the election.
 
 Next up is a two-dimensional array `preferences`. The array `preferences[i]` will represent all of the preferences for voter number `i`, and the integer `preferences[i][j]` here will store the index of the candidate who is the `j`th preference for voter `i`.
@@ -88,7 +88,7 @@ If you look a bit further down in the file, you’ll see that these functions �
 
 
 ## Specification
-----------------
+
 Complete the implementation of `runoff.c` in such a way that it simulates a runoff election. You should complete the implementations of the `vote`, `tabulate`, `print_winner`, `find_min`, `is_tie`, and `eliminate` functions, and you should not modify anything else in `runoff.c` (and the inclusion of additional header files, if you’d like).
 
 
