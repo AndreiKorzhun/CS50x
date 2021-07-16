@@ -13,14 +13,14 @@ Generation 0, blood type OO
 ```
 
 ## Background
--------------
+
 A person’s blood type is determined by two alleles (i.e., different forms of a gene). The three possible alleles are A, B, and O, of which each person has two (possibly the same, possibly different). Each of a child’s parents randomly passes one of their two blood type alleles to their child. The possible blood type combinations, then, are: OO, OA, OB, AO, AA, AB, BO, BA, and BB.
 
 For example, if one parent has blood type AO and the other parent has blood type BB, then the child’s possible blood types would be AB and OB, depending on which allele is received from each parent. Similarly, if one parent has blood type AO and the other OB, then the child’s possible blood types would be AO, OB, AB, and OO.
 
 
 ## Understanding
-----------------
+
 Take a look at the distribution code in `inheritance.c`.
 
 Notice the definition of a type called `person`. Each person has an array of two `parents`, each of which is a pointer to another `person` struct. Each person also has an array of two `alleles`, each of which is a `char` (either `'A'`, `'B'`, or `'O'`).
@@ -30,7 +30,7 @@ Now, take a look at the `main` function. The function begins by “seeding” (i
 The `create_family` and `free_family` functions are left to you to write!
 
 ## Implementation Details
--------------------------
+
 Complete the implementation of `inheritance.c`, such that it creates a family of a specified generation size and assigns blood type alleles to each family member. The oldest generation will have alleles assigned randomly to them.
 
 - The `create_family` function takes an integer (`generations`) as input and should allocate (as via `malloc`) one `person` for each member of the family of that number of generations, returning a pointer to the person in the youngest generation.
