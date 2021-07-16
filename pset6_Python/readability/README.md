@@ -8,7 +8,7 @@ Grade 3
 ```
 
 ## Specification
-----------------
+
 - Write, in a file called `readability.py` in `~/pset6/readability/`, a program that first asks the user to type in some text, and then outputs the grade level for the text, according to the Coleman-Liau formula, exactly as you did in Problem Set 2, except that your program this time should be written in Python.
     - Recall that the Coleman-Liau index is computed as `0.0588 * L - 0.296 * S - 15.8`, where `L` is the average number of letters per 100 words in the text, and S is the average number of sentences per 100 words in the text.
 - Use `get_string` from the CS50 Library to get the user’s input, and `print` to output your answer.
@@ -18,7 +18,7 @@ Grade 3
 
 
 ## Usage
---------
+
 Your program should behave per the example below.
 ```
 $ python readability.py
