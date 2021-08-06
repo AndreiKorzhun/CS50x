@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block contant %}
+    <div class="row g-2">
+
+        <!-- Add tasks button -->
+        <div class="col-2">
+            <div class="p-2">
+                <a href="/add" style="color: #50D;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-10">
+            <div class="p-2">
+
+                <div class="row">
+                    <h6>Current tasks:</h6>
+                </div>
+
+                    <!-- List of current tasks -->
+                    {% if current_tasks %}
+                        <!-- Loop through the database entries to display them -->
+                        {% for current_task in current_tasks %}
+
+                            <!-- Block for one task -->
+                            <div class="d-flex bg-light my-1 border border-2 rounded">
+
+                                <div class="flex-grow-1 bd-highlight">
+                                    <!-- Submit button-->
+                                    <form action="/complete/{{ current_task.task_id }}" method="post">
+                                        <button type="submit" class="btn">{{ current_task.task }}</button>
+                                    </form>
+                                </div>
+
+                                <div class="p-2 bd-highlight">
+                                    <!--Delete button-->
+                                    <form action="/delete/{{ current_task.task_id }}" method="post">
+                                        <button type="submit" class="btn-close" aria-label="Close"></button>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        {% endfor %}
+
+                    {% else %}
+                        <p>Tasks not added yet.</p>
+                    {% endif %}
+
+                <div class="row pt-4">
+                    <h6>Completed tasks:</h6>
+                </div>
+
+                <!-- List of completed tasks -->
+                {% if completed_tasks %}
+                    <!-- Loop through the database entries to display them -->
+                    {% for completed_task in completed_tasks %}
+
+                        <!-- Block for one task -->
+                        <div class="d-flex bg-light my-1 border border-2 rounded">
+
+
+                            <div class="flex-grow-1 bd-highlight">
+                                <!-- Submit button-->
+                                <form action="/incomplete/{{ completed_task.task_id }}" method="post">
+                                    <button type="submit" class="btn"><s>{{ completed_task.task }}</s></button>
+                                </form>
+                            </div>
+
+
+                            <div class="p-2 bd-highlight">
+                                <!--Delete button-->
+                                <form action="/delete/{{ completed_task.task_id }}" method="post">
+                                    <button type="submit" class="btn-close" aria-label="Close"></button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+                    <p>No tasks have been completed yet.</p>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

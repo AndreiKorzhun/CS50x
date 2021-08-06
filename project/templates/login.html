@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}Log in - {% endblock %}
+
+{% block contant %}
+    <div class="d-flex justify-content-center">
+        <div class="shadow-lg px-5 pb-5 pt-4 rounded" style="width: 500px;">
+
+            <!-- Heading -->
+            <div class="p-1 text-center">
+                <h3>Log in</h3>
+            </div>
+
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="p-2">
+                        {% for category, message in messages %}
+                            <div class="flashes {{category}}" role="alert">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <!-- Form -->
+            <div class="p-2">
+                <form action="/login" method="post" id="personal_info">
+
+                    <!-- Input Email -->
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email Adress:</label>
+                        <input class="form-control" id="inputEmail" placeholder="name@example.com" name="email" type="email" autocomplete="off" autofocus required>
+                    </div>
+
+                    <!-- Input Password -->
+                    <div class="form_input_password mb-3">
+                        <label for="inputPassword" class="form-label">Password:</label>
+                        <input class="form-control" id="inputPassword" placeholder="********" name="password" type="password" autocomplete="off" required>
+                        <span id="password-visibility-toggle" class="button_password_visibility" onclick="passwordVisibility()" role="button">show</span>
+
+                        <!-- Displays text if input password was filled incorrectly -->
+                        <div id="password_value_error" for="inputPassword"></div>
+                    </div>
+
+                    <!-- Button Submit -->
+                    <div class="d-grid gap-2 col-3 mt-4 mx-auto">
+                        <button class="submitButton ext-nowrap" type="submit">Log in</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

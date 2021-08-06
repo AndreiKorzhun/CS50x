@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- A character encoding of UTF-8 -->
+        <meta charset="utf-8">
+        <!-- A mobile-optimized site: width = the width of the screen in CSS pixels at a scale of 100%; the property controls the zoom level. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Logo in title: https://favicon.io/favicon-generator/ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/favicon/site.webmanifest">
+
+        <link href="/static/styles.css" rel="stylesheet">
+        <!-- CSS Bootstrap: https://getbootstrap.com -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <title>{% block title %}{% endblock %}Activity</title>
+
+        <!-- My JavaScript -->
+        <script src="/static/script.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Navigation Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border">
+
+            <div class="container">
+
+                <!-- Project name -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <img src="/static/logo.png" alt="Activity" width="150" class="d-inline-block align-top">
+                    </a>
+                </div>
+
+                <!-- Button menu for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Main links -->
+                <div class="collapse navbar-collapse topnav" id="navbarSupportedContent">
+
+                    {% if session.user_id %}
+                        <ul class="navbar-nav ms-auto mb-lg-0">
+
+                            <!-- Link that opens a Modal -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#about_contant">About</a>
+                            </li>
+
+                            <!-- Link establishes the dark or white themes -->
+                            <!-- <li class="nav-item mx-4">
+                                <a class="nav-link" href="#" onclick="darkMode()">Dark Mode
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+                                    </svg>
+                                </a>
+                            </li> -->
+
+                            <!-- Log out of account -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" href="/logout">Log out</a>
+                            </li>
+
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mb-lg-0">
+
+                            <!-- Link to login to user account -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" href="/login">Log in</a>
+                            </li>
+
+                            <!-- Account registration link -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" href="/register">Register</a>
+                            </li>
+
+                        </ul>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- Main contant -->
+        <main class="container p-4">
+
+            {% block contant %}{% endblock %}
+
+        </main>
+
+        <!-- Modal -->
+        <div class="modal fade" id="about_contant">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content pb-3">
+
+                    <!-- Modal contant -->
+                    <div class="modal-body text_aligning">
+
+                        <h3 class="text-center mt-1">Activity</h3>
+
+                        <p class="text-secondary px-3">This is a prototype application written as a final project for CS50x.<br>
+                        It is written in Python using the Flash framework with the SQLite database.</p>
+                        <p class="text-secondary px-3">If you are interested you can have a look at other solved problems by following the link:</p>
+
+                        <div class="text-center">
+                            <a href="https://github.com/AndreiKorzhun" target="_blank" id="github">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

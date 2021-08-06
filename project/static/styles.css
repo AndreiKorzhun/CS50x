@@ -1,0 +1,100 @@
+html {
+    height: auto;
+}
+
+body {
+    background: linear-gradient(to top, #e0e0e0, white);
+    height: auto;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.text_aligning {
+    text-align: justify;
+    vertical-align: middle;
+}
+
+/* Text size of the main menu links */
+.nav-item {
+    font-size: 20px;
+}
+
+
+/* Adds an underline to the main menu links after hovering over them */
+.topnav a {
+    border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+    border-bottom: 3px solid #50D;
+}
+
+
+/* Flash message */
+.flashes {
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+/* Flash message: error */
+.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+/* Flash message: success */
+.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+
+/* Password input form */
+.form_input_password {
+    position: relative;
+}
+/* Button to show and hide password visibility */
+.button_password_visibility {
+    position: absolute;
+    top: 2.3em;
+    right: 1em;
+    padding: 0 5px;
+    cursor: pointer;
+    color: #6495ED;
+    border: 0.1rem solid transparent;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+/* Button display on hover */
+.button_password_visibility:hover {
+    border: 0.1rem;
+    border-style: solid;
+    border-color: #6495ED;
+}
+
+/* Invalid value for password input */
+#password_value_error, #name_value_error {
+    color: red;
+    text-align:justify;
+    padding-right: 10px;
+}
+
+
+/* Form submit button */
+.submitButton {
+    background: #50D;
+
+    border: 1px solid transparent;
+    border-radius: .5rem;
+
+    padding: .375rem .75rem;
+    font-family: inherit;
+    color: white;
+}
+
+#github {
+    color: black;
+}
