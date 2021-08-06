@@ -6,7 +6,7 @@ Actually, that’s a bit of an exaggeration, because credit card numbers actuall
 
 
 ## Luhn’s Algorithm
--------------------
+
 So what’s the secret formula? Well, most cards use an algorithm invented by Hans Peter Luhn of IBM. According to Luhn’s algorithm, you can determine if a credit card number is (syntactically) valid as follows:
 
 1. Multiply every other digit by 2, starting with the number’s second-to-last digit, and then add those products’ digits together.
@@ -41,7 +41,7 @@ So, validating credit card numbers isn’t hard, but it does get a bit tedious b
 
 
 ## Implementation Details
--------------------------
+
 In a file called `credit.c` in a `~/pset1/credit/` directory, write a program that prompts the user for a credit card number and then reports (via `printf`) whether it is a valid American Express, MasterCard, or Visa card number, per the definitions of each’s format herein. So that we can automate some tests of your code, we ask that your program’s last line of output be `AMEX\n` or `MASTERCARD\n` or `VISA\n` or `INVALID\n`, nothing more, nothing less. For simplicity, you may assume that the user’s input will be entirely numeric (i.e., devoid of hyphens, as might be printed on an actual card). But do not assume that the user’s input will fit in an `int`! Best to use `get_long` from CS50’s library to get users’ input. (Why?)
 
 Consider the below representative of how your own program should behave when passed a valid credit card number (sans hyphens).

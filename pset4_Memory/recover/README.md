@@ -6,7 +6,7 @@ $ ./recover card.raw
 ```
 
 ## Background
--------------
+
 In anticipation of this problem, we spent the past several days taking photos of people we know, all of which were saved on a digital camera as JPEGs on a memory card. (Okay, it’s possible we actually spent the past several days on Facebook instead.) Unfortunately, we somehow deleted them all! Thankfully, in the computer world, “deleted” tends not to mean “deleted” so much as “forgotten.” Even though the camera insists that the card is now blank, we’re pretty sure that’s not quite true. Indeed, we’re hoping (er, expecting!) you can write a program that recovers the photos for us!
 
 Even though JPEGs are more complicated than BMPs, JPEGs have “signatures,” patterns of bytes that can distinguish them from other file formats. Specifically, the first three bytes of JPEGs are
@@ -27,7 +27,7 @@ Now, I only have one memory card, but there are a lot of you! And so I’ve gone
 
 
 ## Specification
-----------------
+
 Implement a program called recover that `recovers` JPEGs from a forensic image.
 
 - Implement your program in a file called `recover.c` in a directory called `recover`.

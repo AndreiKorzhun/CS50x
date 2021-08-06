@@ -7,7 +7,7 @@ Lavender
 ```
 
 ## Background
--------------
+
 DNA, the carrier of genetic information in living things, has been used in criminal justice for decades. But how, exactly, does DNA profiling work? Given a sequence of DNA, how can forensic investigators identify to whom it belongs?
 
 Well, DNA is really just a sequence of molecules called nucleotides, arranged into a particular shape (a double helix). Each nucleotide of DNA contains one of four different bases: adenine (A), cytosine (C), guanine (G), or thymine (T). Every human cell has billions of these nucleotides arranged in sequence. Some portions of this sequence (i.e. genome) are the same, or at least very similar, across almost all humans, but other portions of the sequence have a higher genetic diversity and thus vary more across the population.
@@ -35,7 +35,7 @@ Your task is to write a program that will take a sequence of DNA and a CSV file 
 
 
 ## Specification
-----------------
+
 In a file called `dna.py` in `~/pset6/dna/`, implement a program that identifies to whom a sequence of DNA belongs.
 
 - The program should require as its first command-line argument the name of a CSV file containing the STR counts for a list of individuals and should require as its second command-line argument the name of a text file containing the DNA sequence to identify.

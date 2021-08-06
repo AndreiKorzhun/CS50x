@@ -4,7 +4,7 @@ Build a simple homepage using HTML, CSS, and JavaScript.
 
 
 ## Background
--------------
+
 The internet has enabled incredible things: we can use a search engine to research anything imaginable, communicate with friends and family members around the globe, play games, take courses, and so much more. But it turns out that nearly all pages we may visit are built on three core languages, each of which serves a slightly different purpose:
 
 1. HTML, or *HyperText Markup Language*, which is used to describe the content of websites;
@@ -15,7 +15,7 @@ Create a simple homepage that introduces yourself, your favorite hobby or extrac
 
 
 ## Specification
-----------------
+
 Implement in your `homepage` directory a website that must:
 
 - Contain at least four different `.html` pages, at least one of which is `index.html` (the main page of your website), and it should be possible to get from any page on your website to any other page by following one or more hyperlinks.
@@ -37,7 +37,7 @@ to link your own CSS.
 
 
 ## Testing
-----------
+
 If you want to view how your site looks while you work on it, there are two options:
 
 1. Within CS50 IDE, navigate to your `homepage` directory (remember how?) and then execute

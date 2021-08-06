@@ -12,14 +12,14 @@ Alice
 ```
 
 ## Background
--------------
+
 Elections come in all shapes and sizes. In the UK, the Prime Minister is officially appointed by the monarch, who generally chooses the leader of the political party that wins the most seats in the House of Commons. The United States uses a multi-step Electoral College process where citizens vote on how each state should allocate Electors who then elect the President.
 
 Perhaps the simplest way to hold an election, though, is via a method commonly known as the “plurality vote” (also known as “first-past-the-post” or “winner take all”). In the plurality vote, every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.
 
 
 ## Understanding
-----------------
+
 Let’s now take a look at `plurality.c` and read through the distribution code that’s been provided to you.
 
 The line `#define MAX 9` is some syntax used here to mean that `MAX` is a constant (equal to `9`) that can be used throughout the program. Here, it represents the maximum number of candidates an election can have.
@@ -32,7 +32,7 @@ If you look further down in the file, though, you’ll notice that the `vote` an
 
 
 ## Specification
-----------------
+
 Complete the implementation of `plurality.c` in such a way that the program simulates a plurality vote election.
 
 - Complete the vote function.
@@ -48,7 +48,7 @@ You should not modify anything else in `plurality.c` other than the implementati
 
 
 ## Usage
---------
+
 Your program should behave per the examples below.
 ```
 $ ./plurality Alice Bob

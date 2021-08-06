@@ -10,7 +10,7 @@ Years: 9
 
 
 ## Background
--------------
+
 Say we have a population of `n` llamas. Each year, `n / 3` new llamas are born, and `n / 4` llamas pass away.
 
 For example, if we were to start with `n = 1200` llamas, then in the first year, `1200 / 3 = 400` new llamas would be born and `1200 / 4 = 300` llamas would pass away. At the end of that year, we would have `1200 + 400 - 300 = 1300` llamas.
@@ -19,7 +19,7 @@ To try another example, if we were to start with `n = 1000` llamas, at the end o
 
 
 ## Implementation Details
--------------------------
+
 Complete the implementation of `population.c`, such that it calculates the number of years required for the population to grow from the start size to the end size.
 
 - Your program should first prompt the user for a starting population size.
