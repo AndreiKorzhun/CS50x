@@ -12,6 +12,8 @@ def connect_db():
     """ Connect to database """
 
     connect = sqlite3.connect("project.db")
+    # sqlite3.Row supports mapping access by column name and index, iteration,
+    # representation, equality testing and len()
     connect.row_factory = sqlite3.Row
     print("Successfully Connected to SQLite")
     return connect
